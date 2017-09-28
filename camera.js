@@ -5,7 +5,8 @@
 const NodeWebcam = require("node-webcam");
 const colors = require("colors");
 const readline = require('readline');
-const emoji = require('node-emoji')
+const emoji = require('node-emoji');
+const movie = require('./movie');
 
 const rl = readline.createInterface({
   input: process.stdin,
@@ -49,11 +50,12 @@ let setCamera = (callback) =>  {
 }
 
 // Take a picture
-let takePicture = (destinationFolder, format) => {
+let takePicture = (imagePath, fileFormat, videoPath) => {
   let current_date = String(Date.now());
-  let destination = destinationFolder + current_date + format;
+  let destination = imagePath + current_date + fileFormat;
   Webcam.capture(destination, (err, data) => {
     err ? console.log(`Error saving picture to ${destination}`.red) : console.log(`${emoji.get('unicorn_face')}  New image saved to ${destination}`.green);
+    movie.createMovie(videoPath, imagePath, fileFormat);
   });
 };
 

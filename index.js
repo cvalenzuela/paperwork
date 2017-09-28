@@ -27,7 +27,7 @@ let runApp = () => {
       process.exit();
     }
     if (key.name === 'p') {
-      camera.takePicture(imagePath, fileFormat);
+      camera.takePicture(imagePath, fileFormat, videoPath);
     } else if (key.name === 'v') {
       movie.createMovie(videoPath, imagePath, fileFormat);
     }

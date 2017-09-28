@@ -20,8 +20,7 @@ let videoOptions = {
 
 let createMovie = (videoPath, imagesPath, imageFormat) => {
   let validIimages = [];
-  var test = 'matalmala'
-  console.log(`Creating a movie... ${test}`.yellow)
+  console.log(`Creating a movie...`.yellow)
   fs.readdir(imagesPath, (err, files) => {
     if (err) throw err;
     files.forEach((file) => {
