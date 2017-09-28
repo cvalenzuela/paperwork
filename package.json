@@ -1,0 +1,17 @@
+{
+  "name": "liveweb-portrait",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Cristobal Valenzuela <cvalenzuela@nyu.edu> (https://github.com/cvalenzuela)",
+  "license": "ISC",
+  "dependencies": {
+    "colors": "1.1.2",
+    "node-emoji": "1.8.1",
+    "node-webcam": "0.4.3",
+    "videoshow": "0.1.11"
+  }
+}

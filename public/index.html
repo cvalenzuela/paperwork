@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+  *{
+    background: black;
+    margin: 0px;
+    padding: 0px;
+  }
+  video{
+    margin: 0 auto;
+  }
+  </style>
+</head>
+<body>
+  <video src="videos/animation.mp4" autoplay id="video" width="100%" height="auto"></video>
+
+  <script>
+
+  let video = document.getElementById('video');
+  video.addEventListener('ended', function(){
+    this.setAttribute('src', 'videos/animation.mp4');
+    this.play();
+  })
+  video.addEventListener('error', function(){
+    console.log('Grabbing the video just when it didnt exist')
+    this.setAttribute('src', 'videos/animation.mp4');
+    this.play();
+  })
+
+
+  </script>
+</body>
+</html>
