@@ -23,15 +23,18 @@
 
   let video = document.getElementById('video');
   video.addEventListener('ended', function(){
-    this.setAttribute('src', 'videos/animation.mp4');
-    this.play();
+    update_video();
   })
   video.addEventListener('error', function(){
     console.log('Grabbing the video just when it didnt exist')
-    this.setAttribute('src', 'videos/animation.mp4');
-    this.play();
+    update_video();
   })
 
+function update_video(){
+  let url = "videos/animation.mp4" + "?" + new Date().getTime();
+  video.setAttribute('src', url);
+  video.play();
+}
 
   </script>
 </body>
